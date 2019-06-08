@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD/ Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="com.wordpython.dao.CustomerDao">
+	<select id="findCustomerById" parameterType="Integer" resultType="Customer">
+		select * from account where id=#{id}
+	</select>
+	<select id="findCustomerByName" parameterType="String" resultType="Customer">
+		select * from account where username=#{username}
+	</select>
+	<insert id="insertCustomer" parameterType="Customer">
+		insert into account(id,username,balance) values (#{id},#{username},#{balance}) 
+	</insert>
+	<delete id="deleteCustomerByName" parameterType="String">
+		delete from account where username=#{username}
+	</delete>
+</mapper>
