@@ -3,7 +3,7 @@ package com.wordpython.dao;
 import com.wordpython.po.Customer;
 
 public interface CustomerDao {
-	//通过账号查找1
+	//通过账号查找
 	public Customer findCustomerByAccount(Integer id);
 	//通过用户名查找
 	public Customer findCustomerByName(String username);
